@@ -1,0 +1,37 @@
+{
+  "python.pythonPath": "/home/david/miniconda3/envs/threeseven/bin/python",
+  "diagnostic.errorSign": "✖",
+  "diagnostic.warningSign": "⚠",
+  "diagnostic.infoSign": "ℹ",
+  "diagnostic.hintSign": "➤",
+  "suggest.echodocSupport": true,
+  "codeLens.enable": true,
+  "signature.enable": true,
+  "suggest.preferCompleteThanJumpPlaceholder": true,
+  "python.venvFolders": [
+    "envs",
+    ".pyenv",
+    ".direnv",
+    "~/.local/share/virtualenvs",
+    "~/.cache/pypoetry/virtualenvs"
+  ],
+  "python.jediEnabled": true,
+  "python.linting.pylintEnabled": true,
+  "eslint.filetypes": ["html", "Markdown", "json"],
+  "eslint.autoFixOnSave": true,
+  "prettier.disableSuccessMessage": true,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "Markdown",
+    "css",
+    "javascript",
+    "javascriptreact",
+    "json",
+    "Json",
+    "JSON",
+    "rust",
+    "scss",
+    "typescript",
+    "typescriptreact",
+    "python"
+  ]
+}
