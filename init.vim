@@ -112,6 +112,7 @@ Plug 'preservim/nerdtree'
 Plug 'severin-lemaignan/vim-minimap'
 call plug#end()
 
+let g:coc_global_extensions = [ 'coc-snippets', 'coc-json',   'coc-rls', 'coc-eslint', 'coc-tsserver', 'coc-css', 'coc-stylelint', 'coc-prettier', 'coc-git', 'coc-python' ]
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
 
 let g:airline_powerline_fonts=0
@@ -120,16 +121,17 @@ let g:airline#extensions#tabline#show_tabs = 1
 let g:airline#extensions#tabline#show_tab_nr = 0
 let g:airline#extensions#tabline#buffer_idx_mode = 1
 
-nnoremap <leader>p :FZF<CR>
-nnoremap <M-e> :Buffers<CR>
+nnoremap <leader>f :FZF<CR>
+nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>e :NERDTree<CR>
+nnoremap <leader>c :NERDTreeClose<CR>
 
 map , <Plug>(easymotion-prefix)
 
 let g:gruvbox_italic = 1
 let g:gruvbox_contrast_dark = 'hard'
 set background=dark
-colorscheme gruvbox
 
-let g:coc_global_extensions = [ 'coc-snippets', 'coc-json',   'coc-rls', 'coc-eslint', 'coc-tsserver', 'coc-css', 'coc-stylelint', 'coc-prettier', 'coc-git', 'coc-python' ]
 
-set linespace=10
+
+
