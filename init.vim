@@ -106,10 +106,11 @@ Plug 'easymotion/vim-easymotion'
 Plug 'antoinemadec/coc-fzf'
 Plug 'neoclide/coc-python'
 
-
+Plug 'jcherven/jummidark.vim'
 " NerdTree
 Plug 'preservim/nerdtree'
 Plug 'severin-lemaignan/vim-minimap'
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 let g:coc_global_extensions = [ 'coc-snippets', 'coc-json',   'coc-rls', 'coc-eslint', 'coc-tsserver', 'coc-css', 'coc-stylelint', 'coc-prettier', 'coc-git', 'coc-python' ]
@@ -123,6 +124,7 @@ let g:airline#extensions#tabline#buffer_idx_mode = 1
 
 nnoremap <leader>f :FZF<CR>
 nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>n :tabn<CR>
 nnoremap <silent> <expr> <leader>e g:NERDTree.IsOpen() ? "\:NERDTreeClose<CR>" : bufexists(expand('%')) ? "\:NERDTreeFind<CR>" : "\:NERDTree<CR>"
 
 map , <Plug>(easymotion-prefix)
@@ -142,3 +144,6 @@ inoremap <silent><expr> <Tab>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<Tab>" :
       \ coc#refresh()
+
+syntax enable
+colorscheme jummidark
