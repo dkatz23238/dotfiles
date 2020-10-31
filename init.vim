@@ -123,8 +123,7 @@ let g:airline#extensions#tabline#buffer_idx_mode = 1
 
 nnoremap <leader>f :FZF<CR>
 nnoremap <leader>b :Buffers<CR>
-nnoremap <leader>e :NERDTree<CR>
-nnoremap <leader>c :NERDTreeClose<CR>
+nnoremap <silent> <expr> <leader>e g:NERDTree.IsOpen() ? "\:NERDTreeClose<CR>" : bufexists(expand('%')) ? "\:NERDTreeFind<CR>" : "\:NERDTree<CR>"
 
 map , <Plug>(easymotion-prefix)
 
@@ -133,5 +132,13 @@ let g:gruvbox_contrast_dark = 'hard'
 set background=dark
 
 
+" use <tab> for trigger completion and navigate to the next complete item
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
 
-
+inoremap <silent><expr> <Tab>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<Tab>" :
+      \ coc#refresh()
