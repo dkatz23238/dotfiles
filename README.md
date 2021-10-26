@@ -1,29 +1,33 @@
 ## Personal Vim Commands and Cheatsheet
 
-Search in a project: ``
+Search in a project by contents: `Control + f`. Opens ripgrep.
 
-Search in a file: ``
+Search for a project by file name: `Control + p`. Opens FZF.
 
-Find and replace inside a file: ``
+Search in a file: `:/term_to_searchfor`
+
+Find and replace inside all in file: `:%s/thing_to_find/thing_to_replace_with/g`
 
 Find and replace inside project: ``
 
-Select and copy text: ``
+Select and copy text by lines: `V y`
 
-Select and copy text, paste below: ``
+Select and copy text by words: `v y`
 
-Select all text and send to clipboard: ``
+Select and copy text, paste below: Select text then: `y'>p`
 
-Paste above: ``
+Select all text and send to clipboard: `:%y+`
 
-Paste below: ``
+Paste above: `P`
 
-Enter insert mode: ``
+Paste below: `p`
 
-Enter insert mode after cursor: ``
+Enter insert mode: `i`
 
-Set python environment: ``
+Enter insert mode after cursor: `a`
 
-List open buffers: ``
+Set python environment: `{"python.pythonPath": "/home/david/miniconda3/envs/threeeight/bin/python"}`
+
+List open buffers: `b`
 
 
