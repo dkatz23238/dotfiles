@@ -127,7 +127,8 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_tabs = 1
 let g:airline#extensions#tabline#show_tab_nr = 0
 let g:airline#extensions#tabline#buffer_idx_mode = 1
-
+nnoremap <C-z> :u<CR>
+nnoremap <C-s> :w<CR>
 nnoremap <C-p> :FZF<CR>
 nnoremap <C-f> :Rg<CR>
 nnoremap b :Buffers<CR>
