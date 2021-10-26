@@ -17,7 +17,7 @@ set termguicolors
 
 " Use modeline overrides
 set modeline modelines=10
-
+set encoding=utf-8
 set mouse=a
 
 " Undo and backup
@@ -31,6 +31,8 @@ set directory=~/.config/nvim/swp
 let mapleader=" "
 
 set clipboard=unnamedplus
+
+set timeoutlen=50
 
 set diffopt=vertical,iwhiteall
 
@@ -46,6 +48,7 @@ set signcolumn=yes
 autocmd FileType gitcommit setlocal tw=72 | set spell | set colorcolumn=50
 
 call plug#begin('~/.config/nvim/plugged')
+Plug 'wfxr/minimap.vim'
 
 """"""""""""""""""""""""""""""""""""""
 " general
@@ -104,16 +107,19 @@ Plug 'joaohkfaria/vim-jest-snippets'
 Plug 'easymotion/vim-easymotion'
 
 Plug 'antoinemadec/coc-fzf'
-Plug 'neoclide/coc-python'
 
 Plug 'jcherven/jummidark.vim'
 " NerdTree
 Plug 'preservim/nerdtree'
 Plug 'severin-lemaignan/vim-minimap'
 Plug 'ryanoasis/vim-devicons'
+
+" init.vim
+Plug 'lukas-reineke/indent-blankline.nvim'
 call plug#end()
 
-let g:coc_global_extensions = [ 'coc-snippets', 'coc-json',   'coc-rls', 'coc-eslint', 'coc-tsserver', 'coc-css', 'coc-stylelint', 'coc-prettier', 'coc-git', 'coc-python' ]
+let g:coc_global_extensions = [ 'coc-snippets', 'coc-json',   'coc-rls', 'coc-eslint', 'coc-tsserver', 'coc-css', 'coc-stylelint', 'coc-prettier', 'coc-git', 'coc-pyright', 'coc-jedi', 'coc-vetur' ]
+
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
 
 let g:airline_powerline_fonts=0
@@ -122,11 +128,17 @@ let g:airline#extensions#tabline#show_tabs = 1
 let g:airline#extensions#tabline#show_tab_nr = 0
 let g:airline#extensions#tabline#buffer_idx_mode = 1
 
-nnoremap <leader>f :FZF<CR>
-nnoremap <leader>b :Buffers<CR>
-nnoremap <leader>n :tabn<CR>
-nnoremap <silent> <expr> <leader>e g:NERDTree.IsOpen() ? "\:NERDTreeClose<CR>" : bufexists(expand('%')) ? "\:NERDTreeFind<CR>" : "\:NERDTree<CR>"
+nnoremap <C-p> :FZF<CR>
+nnoremap <C-f> :Rg<CR>
+nnoremap b :Buffers<CR>
+nnoremap <C-n>n :tabn<CR>
+nnoremap <silent> <expr> <C-e> g:NERDTree.IsOpen() ? "\:NERDTreeClose<CR>" : bufexists(expand('%')) ? "\:NERDTreeFind<CR>" : "\:NERDTree<CR>"
+nnoremap <silent> <C-b> :NERDTreeToggle<CR>
 
+nnoremap <C-Right> e
+nnoremap <C-Left> b
+nnoremap <C-Down> 10j
+nnoremap <C-Up> 10k
 map , <Plug>(easymotion-prefix)
 
 let g:gruvbox_italic = 1
@@ -147,3 +159,8 @@ inoremap <silent><expr> <Tab>
 
 syntax enable
 colorscheme jummidark
+
+let g:minimap_width = 10
+let g:minimap_auto_start = 1
+let g:minimap_auto_start_win_enter = 1
+
