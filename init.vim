@@ -161,7 +161,7 @@ inoremap <silent><expr> <Tab>
       \ coc#refresh()
 
 syntax enable
-colorscheme jummidark
+" colorscheme jummidark
 
 let g:minimap_width = 10
 let g:minimap_auto_start = 1
