@@ -1,4 +1,5 @@
-" Basics
+"!
+"Basics
 set hidden lazyredraw showmode novisualbell number ttyfast
 
 " Whitespace configuration
@@ -140,6 +141,7 @@ nnoremap <C-Right> e
 nnoremap <C-Left> b
 nnoremap <C-Down> 10j
 nnoremap <C-Up> 10k
+nnoremap <C-q> :qa!<CR>
 map , <Plug>(easymotion-prefix)
 
 let g:gruvbox_italic = 1
